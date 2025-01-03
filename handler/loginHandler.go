@@ -82,7 +82,7 @@ func (h *Handler) LoginHandler(w http.ResponseWriter , r *http.Request){
 		return
 	}
 	res := LoginResponse{user.ID , user.CreatedAt , user.UpdatedAt , user.Email , token , refreshToken , user.IsPremium}
-	helper.RespondWithJSON(w,http.StatusAccepted,res)
+	helper.RespondWithJSON(w,http.StatusOK,res)
 }
 
 // RefreshHandler handles the refreshing of JWT tokens using a valid refresh token.
@@ -114,7 +114,7 @@ func (h *Handler) RefreshHandler(w http.ResponseWriter , r *http.Request){
 		return
 	}
 
-	helper.RespondWithJSON(w,http.StatusAccepted , RefreshResponse{jwtToken})
+	helper.RespondWithJSON(w,http.StatusOK , RefreshResponse{jwtToken})
 }
 
 // RevokeHandler revokes a user's refresh token, making it invalid for future use.

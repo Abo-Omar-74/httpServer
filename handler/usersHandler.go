@@ -144,5 +144,5 @@ func (h *Handler) DeleteAllUsers(w http.ResponseWriter , r *http.Request){
 		helper.RespondWithError(w,http.StatusInternalServerError , "Unable to process your request")
 		return
 	}
-	helper.RespondWithJSON(w,http.StatusAccepted,"All Users have been deleted successfully")
+	helper.RespondWithJSON(w,http.StatusOK,"All Users have been deleted successfully")
 }
